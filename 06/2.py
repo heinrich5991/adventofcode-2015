@@ -16,7 +16,8 @@ def do(state, instr):
     elif cmd == 'turn on':
         state[start[0]:end[0], start[1]:end[1]] += 1
     elif cmd == 'turn off':
-        state[start[0]:end[0], start[1]:end[1]] -= 1
+        state[start[0]:end[0], start[1]:end[1]] += \
+            -1 * (state[start[0]:end[0], start[1]:end[1]] != 0)
 
     return state
 
