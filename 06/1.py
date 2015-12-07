@@ -8,7 +8,8 @@ def do(state, instr):
     cmd = " ".join(instr[:-3])
 
     start = point(instr[-3])
-    end = point(instr[-1])
+    end_inclusive = point(instr[-1])
+    end = (end_inclusive[0] + 1, end_inclusive[1] + 1)
 
     if cmd == 'toggle':
         state[start[0]:end[0], start[1]:end[1]] ^= True
