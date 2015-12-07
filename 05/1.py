@@ -8,7 +8,7 @@ def pairs(iterable):
 
 def first_req(string):
     c = Counter(string)
-    return sum(c[v] for v in "aeiou")
+    return sum(c[v] for v in "aeiou") > 3
 
 def second_req(string):
     return any(x == y for x, y in pairs(string))
