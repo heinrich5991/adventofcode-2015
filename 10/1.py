@@ -10,6 +10,7 @@ def next_impl(string):
             count = 1
         else:
             count += 1
+    yield "{}{}".format(count, cur)
 
 def next_(string):
     return "".join(next_impl(string))
